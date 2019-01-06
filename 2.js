@@ -6,18 +6,20 @@
 
 // By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
 
-
 //answer
 
 // generate fibonacci numbers upto 4 million
 
-let fib = [1,2];
-for (let i=fib.length; i<50; i++) {​
-    fib[i] = fib[i-2] + fib[i-1];
-    if(fib[i]>4*1000*1000){
-			fib.pop(); break;
-			}
+let fib = [1, 2];
+for (let i = fib.length; i < 50; i++) {
+  fib[i] = fib[i - 2] + fib[i - 1];
+  if (fib[i] > 4 * 1000 * 1000) {
+    fib.pop();
+    break;
+  }
 }
 
 // find all even numbers and sum them
-fib.filter(f => f%2==0).reduce((a,c)=>a+c);
+this.answer = fib.filter(f => f % 2 === 0).reduce((a, c) => a + c);
+
+console.log(this.answer); // 4613732
